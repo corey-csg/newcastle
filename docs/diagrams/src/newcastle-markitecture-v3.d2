@@ -1,0 +1,137 @@
+direction: down
+
+title: |md
+  # Newcastle
+  Payer Rules Intelligence Platform
+| {
+  style.font-color: "#000000"
+}
+
+# ===== INPUTS ROW =====
+inputs: Data Sources {
+  style.fill: "#f5f5f5"
+  style.stroke: "#999999"
+  style.border-radius: 12
+  style.font-color: "#4D4D4D"
+
+  payer: Payer Rules {
+    style.fill: "#4D4D4D"
+    style.font-color: white
+    style.border-radius: 6
+    label: |md
+      **Payer Rules**
+      CMS · Commercial · Medicaid
+    |
+  }
+
+  standards: Reference Standards {
+    style.fill: "#4D4D4D"
+    style.font-color: white
+    style.border-radius: 6
+    label: |md
+      **Reference Standards**
+      CPT · ICD-10 · HCPCS · RxNorm
+    |
+  }
+
+  intel: Industry Intel {
+    style.fill: "#666666"
+    style.font-color: white
+    style.border-radius: 6
+    label: |md
+      **Industry Intel**
+      Coder Communities
+    |
+  }
+}
+
+# ===== THE PLATFORM =====
+newcastle: {
+  style.fill: "#00AEEF"
+  style.font-color: white
+  style.font-size: 20
+  style.bold: true
+  style.border-radius: 12
+  style.shadow: true
+
+  label: |md
+    ### Newcastle
+    **Aggregate · Normalize · Alert**
+  |
+}
+
+# ===== OUTPUTS ROW =====
+outputs: Delivery {
+  style.fill: "#f5f5f5"
+  style.stroke: "#999999"
+  style.border-radius: 12
+  style.font-color: "#4D4D4D"
+
+  portal: Web Portal {
+    style.fill: "#00AEEF"
+    style.font-color: white
+    style.border-radius: 6
+  }
+
+  widget: Desktop Widget {
+    style.fill: "#00AEEF"
+    style.font-color: white
+    style.border-radius: 6
+  }
+
+  chat: AI Assistant {
+    style.fill: "#00AEEF"
+    style.font-color: white
+    style.border-radius: 6
+  }
+
+  alerts: Smart Alerts {
+    style.fill: "#00AEEF"
+    style.font-color: white
+    style.border-radius: 6
+  }
+}
+
+# ===== VALUE =====
+value: {
+  style.fill: transparent
+  style.stroke: transparent
+
+  v1: "+5-40% Revenue" {
+    style.fill: "#6CC24A"
+    style.font-color: white
+    style.border-radius: 20
+    style.font-size: 14
+  }
+
+  v2: "Fewer Denials" {
+    style.fill: "#6CC24A"
+    style.font-color: white
+    style.border-radius: 20
+    style.font-size: 14
+  }
+
+  v3: "Less Admin Burden" {
+    style.fill: "#6CC24A"
+    style.font-color: white
+    style.border-radius: 20
+    style.font-size: 14
+  }
+}
+
+# ===== CONNECTIONS =====
+inputs -> newcastle: {
+  style.stroke: "#999999"
+  style.stroke-width: 2
+}
+
+newcastle -> outputs: {
+  style.stroke: "#00AEEF"
+  style.stroke-width: 2
+}
+
+outputs -> value: {
+  style.stroke: "#6CC24A"
+  style.stroke-width: 2
+  style.stroke-dash: 3
+}

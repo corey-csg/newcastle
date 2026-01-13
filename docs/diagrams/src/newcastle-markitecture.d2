@@ -1,0 +1,127 @@
+direction: right
+
+title: |md
+  # Newcastle
+  ### Payer Rules Intelligence Platform
+|
+
+# ===== DATA SOURCES =====
+sources: Data Sources {
+  style.fill: "#f8f9fa"
+  style.stroke: "#dee2e6"
+  style.border-radius: 12
+
+  cms: CMS / Medicare {
+    style.fill: "#1a5276"
+    style.font-color: white
+    style.border-radius: 8
+  }
+
+  commercial: Commercial Payers {
+    style.fill: "#2874a6"
+    style.font-color: white
+    style.border-radius: 8
+  }
+
+  medicaid: State Medicaid {
+    style.fill: "#3498db"
+    style.font-color: white
+    style.border-radius: 8
+  }
+
+  industry: Industry Intel {
+    style.fill: "#85c1e9"
+    style.font-color: "#1a5276"
+    style.border-radius: 8
+  }
+}
+
+# ===== THE PLATFORM =====
+newcastle: {
+  style.fill: "#0d6efd"
+  style.font-color: white
+  style.font-size: 24
+  style.bold: true
+  style.border-radius: 16
+  style.shadow: true
+
+  label: |md
+    ## Newcastle
+
+    **Aggregate** · **Normalize** · **Alert**
+
+    AI-powered payer rules intelligence
+  |
+}
+
+# ===== USERS =====
+users: Users {
+  style.fill: "#f8f9fa"
+  style.stroke: "#dee2e6"
+  style.border-radius: 12
+
+  rcm: RCM Teams {
+    style.fill: "#6f42c1"
+    style.font-color: white
+    style.border-radius: 8
+  }
+
+  coders: Clinical Coders {
+    style.fill: "#8b5cf6"
+    style.font-color: white
+    style.border-radius: 8
+  }
+
+  admins: Provider Admins {
+    style.fill: "#a78bfa"
+    style.font-color: white
+    style.border-radius: 8
+  }
+}
+
+# ===== VALUE PROPS =====
+value: Value Delivered {
+  style.fill: "#f8f9fa"
+  style.stroke: "#dee2e6"
+  style.border-radius: 12
+
+  v1: "5-40% Revenue Uplift" {
+    style.fill: "#198754"
+    style.font-color: white
+    style.font-size: 13
+    style.border-radius: 20
+  }
+
+  v2: "Fewer Denied Claims" {
+    style.fill: "#198754"
+    style.font-color: white
+    style.font-size: 13
+    style.border-radius: 20
+  }
+
+  v3: "Real-time Updates" {
+    style.fill: "#198754"
+    style.font-color: white
+    style.font-size: 13
+    style.border-radius: 20
+  }
+}
+
+# ===== CONNECTIONS =====
+sources -> newcastle: {
+  style.stroke: "#3498db"
+  style.stroke-width: 3
+  label: "PDFs · Policies · Bulletins"
+}
+
+newcastle -> users: {
+  style.stroke: "#6f42c1"
+  style.stroke-width: 3
+  label: "Portal · Widget · AI Chat · Alerts"
+}
+
+users -> value: {
+  style.stroke: "#198754"
+  style.stroke-width: 2
+  style.stroke-dash: 4
+}

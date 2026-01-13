@@ -1,0 +1,76 @@
+{
+  "project": "Newcastle",
+  "branchName": "ralph/diagram-refinement",
+  "description": "Iteratively refine architectural diagrams for Newcastle until stakeholder consensus",
+  "userStories": [
+    {
+      "id": "US-001",
+      "title": "Refine Markitecture Diagram to Stakeholder Consensus",
+      "description": "As a founder preparing for investor/customer conversations, I need a polished executive markitecture diagram that achieves approval from all four stakeholder personas (C-Suite, Tech Leadership, Customer, Sales/BD).",
+      "type": "ui",
+      "acceptanceCriteria": [
+        "Source file: docs/diagrams/src/newcastle-markitecture-v8.d2 (or new version)",
+        "Render diagram using: d2 --theme 0 <source> <output>.png",
+        "View rendered PNG using Read tool for Visual verification of diagram",
+        "Simulate C-Suite Executive feedback: Can understand value in 5 seconds, board-ready appearance",
+        "Simulate Tech Leadership feedback: System boundary clear, data flows accurate",
+        "Simulate Customer (RCM Director) feedback: Recognizes their problem, appropriate jargon",
+        "Simulate Sales/BD Leader feedback: Can open conversation, creates curiosity",
+        "All personas provide verdict: Approved or Approved with minor notes",
+        "No persona has Blocking concern",
+        "If any persona says Needs revision, edit source and re-iterate until consensus",
+        "Diagram is: Intuitive, Sharp, Slide-ready (16:9), Professional, Modern, Clean",
+        "Uses Clay Street Group palette: Cyan #00AEEF (hero), Green #6CC24A (value), Grays #4D4D4D/#999999",
+        "E2E test: Final PNG renders without errors and is viewable",
+        "Final output: docs/diagrams/output/newcastle-markitecture-final.png and .svg"
+      ],
+      "priority": 1,
+      "passes": false,
+      "notes": "Iteration loop: Render → View with Read tool → Simulate 4 personas → Edit if needed → Repeat until consensus. Current known issues: Data Sources container positioned right instead of above, layout may be too spread out, 'personalizes' label may be too subtle."
+    },
+    {
+      "id": "US-002",
+      "title": "Refine C4 Context Diagram to Stakeholder Consensus",
+      "description": "As a founder preparing for technical discussions, I need a polished C4 System Context diagram that achieves approval from all four stakeholder personas (C-Suite, Tech Leadership, Customer, Sales/BD).",
+      "type": "ui",
+      "acceptanceCriteria": [
+        "Source file: docs/diagrams/src/newcastle-c4-context-v3.puml (or new version)",
+        "Render diagram using: plantuml -tpng <source>",
+        "View rendered PNG using Read tool for Visual verification of diagram",
+        "Simulate C-Suite Executive feedback: Clear system purpose, professional appearance",
+        "Simulate Tech Leadership feedback: Correct abstraction level, accurate integrations",
+        "Simulate Customer (RCM Director) feedback: Understands how it fits their workflow",
+        "Simulate Sales/BD Leader feedback: Good conversation starter for technical buyers",
+        "All personas provide verdict: Approved or Approved with minor notes",
+        "No persona has Blocking concern",
+        "If any persona says Needs revision, edit source and re-iterate until consensus",
+        "Diagram is: Intuitive, Sharp, Slide-ready (16:9), Professional, Modern, Clean",
+        "Uses Clay Street Group palette: Cyan #00AEEF (hero), Grays #4D4D4D/#999999",
+        "E2E test: Final PNG renders without errors and is viewable",
+        "Final output: docs/diagrams/output/newcastle-context-final.png and .svg"
+      ],
+      "priority": 2,
+      "passes": false,
+      "notes": "Iteration loop: Render → View with Read tool → Simulate 4 personas → Edit if needed → Repeat until consensus. Current known issues: May need better visual hierarchy, relationship labels could be clearer."
+    },
+    {
+      "id": "US-003",
+      "title": "Generate Final Outputs and Documentation",
+      "description": "As a founder, I need the final approved diagrams saved in both PNG and SVG formats, plus documentation of the iteration process and changes made.",
+      "type": "devops",
+      "acceptanceCriteria": [
+        "newcastle-markitecture-final.png exists in docs/diagrams/output/",
+        "newcastle-markitecture-final.svg exists in docs/diagrams/output/",
+        "newcastle-context-final.png exists in docs/diagrams/output/",
+        "newcastle-context-final.svg exists in docs/diagrams/output/",
+        "Final source files saved with -final suffix",
+        "Script executes: copy final versions to output directory with correct names",
+        "Create docs/diagrams/ITERATION-LOG.md with valid markdown documenting: iterations per diagram, key feedback themes, changes made",
+        "Both diagrams pass 5-second test: viewer can describe what it shows within 5 seconds"
+      ],
+      "priority": 3,
+      "passes": false,
+      "notes": "Only run after US-001 and US-002 achieve consensus."
+    }
+  ]
+}
