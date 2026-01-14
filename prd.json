@@ -25,8 +25,8 @@
         "Final output: docs/diagrams/output/newcastle-markitecture-final.png and .svg"
       ],
       "priority": 1,
-      "passes": false,
-      "notes": "Iteration loop: Render → View with Read tool → Simulate 4 personas → Edit if needed → Repeat until consensus. Current known issues: Data Sources container positioned right instead of above, layout may be too spread out, 'personalizes' label may be too subtle."
+      "passes": true,
+      "notes": "Completed: v8→v9→v10 iterations. Final consensus achieved with unified Inputs container, top-down flow, and cyan brand title."
     },
     {
       "id": "US-002",
@@ -50,8 +50,8 @@
         "Final output: docs/diagrams/output/newcastle-context-final.png and .svg"
       ],
       "priority": 2,
-      "passes": false,
-      "notes": "Iteration loop: Render → View with Read tool → Simulate 4 personas → Edit if needed → Repeat until consensus. Current known issues: May need better visual hierarchy, relationship labels could be clearer."
+      "passes": true,
+      "notes": "Completed: v3→v4 iterations. Added relationship labels and cyan title. Full consensus achieved."
     },
     {
       "id": "US-003",
@@ -69,8 +69,8 @@
         "Both diagrams pass 5-second test: viewer can describe what it shows within 5 seconds"
       ],
       "priority": 3,
-      "passes": false,
-      "notes": "Only run after US-001 and US-002 achieve consensus."
+      "passes": true,
+      "notes": "Completed: All final outputs generated (PNG, SVG, source files) and ITERATION-LOG.md created."
     }
   ]
 }
