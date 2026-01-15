@@ -1,0 +1,37 @@
+@startuml newcastle-context-v4
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Context.puml
+
+LAYOUT_LEFT_RIGHT()
+HIDE_STEREOTYPE()
+
+title <size:24><color:#00AEEF>Newcastle</color> - System Context</size>
+
+skinparam backgroundColor white
+skinparam defaultFontName "Avenir Next"
+skinparam shadowing false
+skinparam roundCorner 8
+
+' ===== DATA SOURCES (LEFT) =====
+System_Ext(payer_rules, "Payer Rules", "CMS, Commercial Payers,\nState Medicaid programs")
+
+System_Ext(ref_standards, "Reference Standards", "CPT, ICD-10, HCPCS,\nRxNorm, Terminologies")
+
+System_Ext(industry, "Industry Intel", "Coder communities,\nAAPC forums")
+
+' ===== THE SYSTEM (CENTER) =====
+System(newcastle, "Newcastle", "Aggregates and normalizes\npayer billing rules.\nAI-powered change detection\nand impact scoring.")
+
+' ===== USERS (RIGHT) =====
+Person(rcm_staff, "RCM / Coding Staff", "Revenue cycle and\nclinical coding\nprofessionals")
+
+Person(admin, "Provider Admin", "Configures payer mix,\nservice lines, alerts")
+
+' ===== DATA FLOW =====
+Rel(payer_rules, newcastle, "Feeds rules")
+Rel(ref_standards, newcastle, "Provides codes")
+Rel(industry, newcastle, "Supplies intel")
+
+Rel(newcastle, rcm_staff, "Portal, Widget,\nAI Chat, Alerts")
+Rel(newcastle, admin, "Configuration")
+
+@enduml

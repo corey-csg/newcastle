@@ -1,0 +1,44 @@
+@startuml newcastle-context-deck
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Context.puml
+
+LAYOUT_LEFT_RIGHT()
+HIDE_STEREOTYPE()
+
+title <size:28>Newcastle</size>\n<size:16>Payer Rules Intelligence Platform</size>
+
+skinparam backgroundColor white
+skinparam defaultFontName "Helvetica Neue"
+skinparam shadowing false
+skinparam roundCorner 10
+
+' ===== DATA SOURCES (LEFT) =====
+System_Ext(cms, "CMS / Medicare", "Federal policies,\nfee schedules,\nLCDs/NCDs")
+
+System_Ext(commercial, "Commercial\nPayers", "BCBS, Aetna, UHC\npolicy portals")
+
+System_Ext(medicaid, "State Medicaid", "Regional billing\nrules & bulletins")
+
+System_Ext(industry, "Industry\nSources", "AAPC forums,\ncoder communities")
+
+' ===== THE SYSTEM (CENTER) =====
+System(newcastle, "Newcastle", "Aggregates and normalizes payer rules\nDetects changes with AI\nScores business impact\nDelivers via portal, widget, and alerts")
+
+' ===== USERS (RIGHT) =====
+Person(rcm_team, "RCM Team", "Researches rules\nvia web portal")
+
+Person(coder, "Clinical Coder", "Real-time lookups\nvia desktop widget")
+
+Person(admin, "Provider Admin", "Configures payer mix\n& alert preferences")
+
+' ===== DATA FLOW - Ingestion =====
+Rel(cms, newcastle, "PDF/HTML", " ")
+Rel(commercial, newcastle, "PDF/HTML", " ")
+Rel(medicaid, newcastle, "PDF/HTML", " ")
+Rel(industry, newcastle, "Web", " ")
+
+' ===== DATA FLOW - Delivery =====
+Rel(newcastle, rcm_team, "Search, Alerts", " ")
+Rel(newcastle, coder, "AI Chat", " ")
+Rel(newcastle, admin, "Config", " ")
+
+@enduml

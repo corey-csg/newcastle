@@ -1,0 +1,132 @@
+direction: down
+
+# ===== DATA SOURCES (TOP CENTER) =====
+sources: Data Sources {
+  style.fill: "#f5f5f5"
+  style.stroke: "#cccccc"
+  style.border-radius: 10
+  style.font-color: "#4D4D4D"
+
+  payer: "Payer Rules\nCMS · Commercial · Medicaid" {
+    style.fill: "#4D4D4D"
+    style.font-color: white
+    style.border-radius: 6
+  }
+
+  standards: "Reference Standards\nCPT · ICD-10 · HCPCS · RxNorm" {
+    style.fill: "#4D4D4D"
+    style.font-color: white
+    style.border-radius: 6
+  }
+
+  intel: "Industry Intel\nCoder Communities" {
+    style.fill: "#808080"
+    style.font-color: white
+    style.border-radius: 6
+  }
+}
+
+# ===== PLATFORM ROW =====
+platform: " " {
+  direction: right
+  style.fill: transparent
+  style.stroke: transparent
+
+  config: "Provider Config\nPayer Mix · Services" {
+    style.fill: "#4D4D4D"
+    style.font-color: white
+    style.border-radius: 8
+  }
+
+  newcastle: "Newcastle\nAggregate · Normalize · Alert" {
+    style.fill: "#00AEEF"
+    style.font-color: white
+    style.font-size: 18
+    style.bold: true
+    style.border-radius: 10
+    style.shadow: true
+  }
+
+  config -> newcastle: {
+    style.stroke: "#666666"
+    style.stroke-width: 2
+    label: personalizes
+    style.font-size: 11
+    style.font-color: "#888888"
+  }
+}
+
+# ===== DELIVERY CHANNELS =====
+delivery: Delivery Channels {
+  style.fill: "#f5f5f5"
+  style.stroke: "#cccccc"
+  style.border-radius: 10
+  style.font-color: "#4D4D4D"
+
+  portal: Web Portal {
+    style.fill: "#00AEEF"
+    style.font-color: white
+    style.border-radius: 6
+  }
+
+  widget: Desktop Widget {
+    style.fill: "#00AEEF"
+    style.font-color: white
+    style.border-radius: 6
+  }
+
+  chat: AI Assistant {
+    style.fill: "#00AEEF"
+    style.font-color: white
+    style.border-radius: 6
+  }
+
+  alerts: Smart Alerts {
+    style.fill: "#00AEEF"
+    style.font-color: white
+    style.border-radius: 6
+  }
+}
+
+# ===== BUSINESS VALUE =====
+value: Business Value {
+  style.fill: "#f5f5f5"
+  style.stroke: "#cccccc"
+  style.border-radius: 10
+  style.font-color: "#4D4D4D"
+
+  v1: "+5-40% Revenue" {
+    style.fill: "#6CC24A"
+    style.font-color: white
+    style.border-radius: 16
+  }
+
+  v2: "Fewer Denials" {
+    style.fill: "#6CC24A"
+    style.font-color: white
+    style.border-radius: 16
+  }
+
+  v3: "Less Admin Burden" {
+    style.fill: "#6CC24A"
+    style.font-color: white
+    style.border-radius: 16
+  }
+}
+
+# ===== FLOW =====
+sources -> platform.newcastle: {
+  style.stroke: "#999999"
+  style.stroke-width: 2
+}
+
+platform.newcastle -> delivery: {
+  style.stroke: "#00AEEF"
+  style.stroke-width: 2
+}
+
+delivery -> value: {
+  style.stroke: "#6CC24A"
+  style.stroke-width: 2
+  style.stroke-dash: 3
+}

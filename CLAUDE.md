@@ -1,5 +1,14 @@
 # Newcastle
 
+## Cross-Project Context
+This project is part of the Fusion Platform ecosystem. For strategic context, IP documentation, and cross-project research, see: `../fusion-portfolio/CLAUDE.md`
+
+**Key references:**
+- `../fusion-portfolio/legal/ip-registry.md` - IP ownership and boundaries
+- `../fusion-portfolio/legal/prior-art/2017-tfkm-methodology.md` - Original TFKM methodology (2017)
+
+**Note:** Newcastle represents a "partnership slice" of the broader Fusion Platform. Foundational platform IP is documented in the fusion-portfolio repository.
+
 ## Tech Stack
 [To be defined in PRD]
 

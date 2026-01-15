@@ -1,0 +1,52 @@
+@startuml newcastle-context
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Context.puml
+
+!define DEVICONS https://raw.githubusercontent.com/tupadr3/plantuml-icon-font-sprites/master/devicons
+!define FONTAWESOME https://raw.githubusercontent.com/tupadr3/plantuml-icon-font-sprites/master/font-awesome-5
+
+LAYOUT_WITH_LEGEND()
+LAYOUT_LEFT_RIGHT()
+
+title <size:24>Newcastle - System Context</size>\n<size:14>Payer Rules Intelligence Platform</size>
+
+' Styling
+skinparam backgroundColor white
+skinparam defaultFontName "Helvetica Neue"
+skinparam defaultFontSize 12
+skinparam shadowing false
+skinparam roundCorner 8
+
+' ===== USERS =====
+Person(rcm_team, "RCM Team", "Revenue cycle management\nprofessionals researching\npayer rules and billing\nguidelines")
+
+Person(coder, "Clinical Coder", "Medical coders needing\nreal-time access to\ncoding rules during\nclaim preparation")
+
+Person(admin, "Provider Admin", "Configures organization's\npayer mix, service lines,\nand alert preferences")
+
+' ===== THE SYSTEM =====
+System(newcastle, "Newcastle", "Aggregates, normalizes, and\ndelivers payer billing rules\nwith AI-powered search and\nimpact-prioritized alerts")
+
+' ===== EXTERNAL SYSTEMS - DATA SOURCES =====
+System_Ext(cms, "CMS / Medicare", "Federal coverage policies,\nfee schedules, transmittals,\nLCD/NCD updates")
+
+System_Ext(commercial, "Commercial Payers", "BCBS, Aetna, UHC, Cigna\npolicy portals with coverage\nand billing guidelines")
+
+System_Ext(medicaid, "State Medicaid", "State-specific Medicaid\nprograms with regional\nbilling rules")
+
+System_Ext(industry, "Industry Sources", "AAPC forums, coder\ncommunities, professional\ndiscussion channels")
+
+' ===== RELATIONSHIPS - Data Ingestion =====
+Rel_L(cms, newcastle, "Rules, fee schedules,\nLCDs/NCDs", "PDF/HTML")
+Rel_L(commercial, newcastle, "Policies, bulletins,\nupdates", "PDF/HTML")
+Rel_L(medicaid, newcastle, "State rules,\nbulletins", "PDF/HTML")
+Rel_L(industry, newcastle, "Community context,\nimplementation insights", "Web")
+
+' ===== RELATIONSHIPS - User Interactions =====
+Rel_R(rcm_team, newcastle, "Searches rules,\nreviews alerts,\nresearches policies", "Web Portal")
+Rel_R(coder, newcastle, "Quick lookups,\nAI chat queries", "Desktop Widget")
+Rel_R(admin, newcastle, "Configures payer mix,\nservice lines, alerts", "Admin Portal")
+
+' ===== VALUE DELIVERY =====
+Rel_D(newcastle, rcm_team, "Prioritized alerts,\nsource documents,\nchange summaries", "Email/Portal")
+
+@enduml

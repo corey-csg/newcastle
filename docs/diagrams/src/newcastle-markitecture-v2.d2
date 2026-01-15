@@ -1,0 +1,207 @@
+direction: down
+
+title: |md
+  # Newcastle
+  Payer Rules Intelligence Platform
+| {
+  style.font-color: "#000000"
+}
+
+# ===== TOP ROW: INPUTS =====
+inputs: {
+  style.fill: transparent
+  style.stroke: transparent
+
+  # Payer Rules Sources
+  payer-rules: Payer Rules {
+    style.fill: "#f5f5f5"
+    style.stroke: "#999999"
+    style.border-radius: 10
+    style.font-color: "#4D4D4D"
+
+    cms: CMS / Medicare {
+      style.fill: "#4D4D4D"
+      style.font-color: white
+      style.border-radius: 6
+    }
+
+    commercial: Commercial Payers {
+      style.fill: "#666666"
+      style.font-color: white
+      style.border-radius: 6
+    }
+
+    medicaid: State Medicaid {
+      style.fill: "#808080"
+      style.font-color: white
+      style.border-radius: 6
+    }
+  }
+
+  # Reference Standards
+  standards: Reference Standards {
+    style.fill: "#f5f5f5"
+    style.stroke: "#999999"
+    style.border-radius: 10
+    style.font-color: "#4D4D4D"
+
+    codes: Code Systems {
+      style.fill: "#4D4D4D"
+      style.font-color: white
+      style.border-radius: 6
+      label: "CPT · ICD-10 · HCPCS"
+    }
+
+    term: Terminologies {
+      style.fill: "#666666"
+      style.font-color: white
+      style.border-radius: 6
+      label: "RxNorm · SNOMED"
+    }
+
+    prop: Proprietary Assets {
+      style.fill: "#808080"
+      style.font-color: white
+      style.border-radius: 6
+    }
+  }
+
+  # Industry Intelligence
+  intel: Industry Intel {
+    style.fill: "#f5f5f5"
+    style.stroke: "#999999"
+    style.border-radius: 10
+    style.font-color: "#4D4D4D"
+
+    forums: Coder Communities {
+      style.fill: "#666666"
+      style.font-color: white
+      style.border-radius: 6
+    }
+  }
+}
+
+# ===== CENTER: THE PLATFORM =====
+newcastle: {
+  style.fill: "#00AEEF"
+  style.font-color: white
+  style.font-size: 22
+  style.bold: true
+  style.border-radius: 14
+  style.shadow: true
+
+  label: |md
+    ### Newcastle
+
+    **Aggregate · Normalize · Alert**
+
+    AI-powered rules intelligence
+  |
+}
+
+# ===== BOTTOM ROW: OUTPUTS =====
+outputs: {
+  style.fill: transparent
+  style.stroke: transparent
+
+  users: Users {
+    style.fill: "#f5f5f5"
+    style.stroke: "#999999"
+    style.border-radius: 10
+    style.font-color: "#4D4D4D"
+
+    rcm: RCM Teams {
+      style.fill: "#4D4D4D"
+      style.font-color: white
+      style.border-radius: 6
+    }
+
+    coders: Clinical Coders {
+      style.fill: "#666666"
+      style.font-color: white
+      style.border-radius: 6
+    }
+
+    admins: Admins {
+      style.fill: "#808080"
+      style.font-color: white
+      style.border-radius: 6
+    }
+  }
+
+  channels: Channels {
+    style.fill: "#f5f5f5"
+    style.stroke: "#999999"
+    style.border-radius: 10
+    style.font-color: "#4D4D4D"
+
+    portal: Web Portal {
+      style.fill: "#00AEEF"
+      style.font-color: white
+      style.border-radius: 6
+    }
+
+    widget: Desktop Widget {
+      style.fill: "#00AEEF"
+      style.font-color: white
+      style.border-radius: 6
+    }
+
+    chat: AI Chat {
+      style.fill: "#00AEEF"
+      style.font-color: white
+      style.border-radius: 6
+    }
+  }
+
+  value: Value {
+    style.fill: "#f5f5f5"
+    style.stroke: "#999999"
+    style.border-radius: 10
+    style.font-color: "#4D4D4D"
+
+    v1: "+5-40% Revenue" {
+      style.fill: "#6CC24A"
+      style.font-color: white
+      style.border-radius: 16
+    }
+
+    v2: "Fewer Denials" {
+      style.fill: "#6CC24A"
+      style.font-color: white
+      style.border-radius: 16
+    }
+  }
+}
+
+# ===== CONNECTIONS (clean, no labels) =====
+inputs.payer-rules -> newcastle: {
+  style.stroke: "#999999"
+  style.stroke-width: 2
+}
+
+inputs.standards -> newcastle: {
+  style.stroke: "#999999"
+  style.stroke-width: 2
+}
+
+inputs.intel -> newcastle: {
+  style.stroke: "#999999"
+  style.stroke-width: 2
+}
+
+newcastle -> outputs.users: {
+  style.stroke: "#00AEEF"
+  style.stroke-width: 2
+}
+
+newcastle -> outputs.channels: {
+  style.stroke: "#00AEEF"
+  style.stroke-width: 2
+}
+
+outputs.channels -> outputs.value: {
+  style.stroke: "#6CC24A"
+  style.stroke-width: 2
+  style.stroke-dash: 3
+}

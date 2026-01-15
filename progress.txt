@@ -1,3 +1,54 @@
 # Ralph Progress Log
-Started: [date]
+Started: 2026-01-13
+
+## Codebase Patterns
+- D2 diagrams: Use `d2 --theme 0 <source> <output>.png` for clean white background
+- PlantUML: Use `plantuml -tpng <source>` - outputs to same directory with diagram name from @startuml
+- PlantUML output naming: Uses the @startuml title, not the filename (e.g., `@startuml newcastle-context-v4` → `newcastle-context-v4.png`)
+- D2 containers: Use `direction: right` inside container for horizontal layout of children
+- D2 invisible connectors: Use `style.stroke: transparent` for positioning-only connections
+- Clay Street Group palette: Cyan #00AEEF (hero), Green #6CC24A (value), Grays #4D4D4D/#999999/#808080
+- Diagram iteration: Render → View with Read tool → Simulate personas → Edit → Repeat until consensus
+
+---
+
+## 2026-01-13 - US-001: Refine Markitecture Diagram
+- Implemented 3 iterations (v8→v9→v10) to achieve stakeholder consensus
+- Files changed:
+  - Created: `docs/diagrams/src/newcastle-markitecture-v9.d2`
+  - Created: `docs/diagrams/src/newcastle-markitecture-v10.d2`
+  - Created: `docs/diagrams/src/newcastle-markitecture-final.d2`
+  - Created: `docs/diagrams/output/newcastle-markitecture-final.png`
+  - Created: `docs/diagrams/output/newcastle-markitecture-final.svg`
+- **Learnings for future iterations:**
+  - D2 layout is sensitive to container nesting - putting elements in wrong containers breaks flow
+  - "Your Setup" (customer config) should be visually distinguished from external data sources
+  - Top-down flow with single "Inputs" container creates clearest visual hierarchy
+  - Cyan brand color in title draws attention effectively
+
+---
+
+## 2026-01-13 - US-002: Refine C4 Context Diagram
+- Implemented 2 iterations (v3→v4) to achieve stakeholder consensus
+- Files changed:
+  - Created: `docs/diagrams/src/newcastle-c4-context-v4.puml`
+  - Created: `docs/diagrams/src/newcastle-c4-context-final.puml`
+  - Created: `docs/diagrams/output/newcastle-context-final.png`
+  - Created: `docs/diagrams/output/newcastle-context-final.svg`
+- **Learnings for future iterations:**
+  - C4 Context diagrams should have clear relationship labels (e.g., "Feeds rules")
+  - PlantUML -o flag outputs to specified directory, but check actual output location
+  - Blank relationship labels in C4 work but descriptive verbs tell better story
+
+---
+
+## 2026-01-13 - US-003: Generate Final Outputs and Documentation
+- Generated all final deliverables
+- Files changed:
+  - Created: `docs/diagrams/ITERATION-LOG.md`
+  - Updated: `prd.json` (all stories marked passes: true)
+- **Learnings for future iterations:**
+  - Always verify file existence after copy operations
+  - ITERATION-LOG.md should capture key design decisions, not just changes
+
 ---
